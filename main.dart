@@ -32,11 +32,11 @@ class Universidad {
 
   factory Universidad.fromJson(Map<String, dynamic> json) {
     return Universidad(
-      name: json['name'],
-      country: json['country'],
-      domain: json['domain'],
+      name: json['name'] ?? '',
+      country: json['country'] ?? '',
+      domain: json['domain'] ?? '',
       webPages:
-          json['web_pages'].isEmpty ? [] : List<String>.from(json['web_pages']),
+          json['web_pages'] != null ? List<String>.from(json['web_pages']) : [],
     );
   }
 }
